@@ -38,12 +38,6 @@ The workflow is simple and direct:
 |              |    |                          |    |                  |
 +--------------+    +--------------------------+    +------------------+
 ```
-
-```mermaid
-flowchart LR
-    A[Slack\n(User UI)] <--> B[AWS Lambda Function URL\n(Python Backend)]
-    B <--> C[Amazon S3\n(Private Bucket)]
-```
 ***
 
 ## Setup and Deployment
