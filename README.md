@@ -29,12 +29,21 @@ The workflow is simple and direct:
     * For `/s3-fetch`, it generates a secure S3 pre-signed URL for the requested file.
     * For `/s3-list`, it queries the S3 bucket for a list of its contents.
 4.  **Response to Slack**: The Lambda function posts a confirmation message, a download link, or a file list back to the Slack channel.
-+-----------+        +--------------------------+        +------------------+
-|           |        |                          |        |                  |
-|   Slack   |  <-->  |  AWS Lambda Function URL |  <-->  |    Amazon S3     |
-| (User UI) |        |    (Python Backend)      |        | (Private Bucket) |
-|           |        |                          |        |                  |
-+-----------+        +--------------------------+        +------------------+
+
+```text
++--------------+    +--------------------------+    +------------------+
+|              |    |                          |    |                  |
+|   Slack      |<-->| AWS Lambda Function URL  |<-->|    Amazon S3      |
+|  (User UI)   |    |   (Python Backend)       |    | (Private Bucket)  |
+|              |    |                          |    |                  |
++--------------+    +--------------------------+    +------------------+
+```
+
+```mermaid
+flowchart LR
+    A[Slack<br/>(User UI)] <--> B[AWS Lambda Function URL<br/>(Python Backend)]
+    B <--> C[Amazon S3<br/>(Private Bucket)]
+```
 ***
 
 ## Setup and Deployment
