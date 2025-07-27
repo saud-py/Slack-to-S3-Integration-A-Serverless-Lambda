@@ -41,8 +41,8 @@ The workflow is simple and direct:
 
 ```mermaid
 flowchart LR
-    A[Slack<br/>(User UI)] <--> B[AWS Lambda Function URL<br/>(Python Backend)]
-    B <--> C[Amazon S3<br/>(Private Bucket)]
+    A[Slack\n(User UI)] <--> B[AWS Lambda Function URL\n(Python Backend)]
+    B <--> C[Amazon S3\n(Private Bucket)]
 ```
 ***
 
